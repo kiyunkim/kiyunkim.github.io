@@ -1,7 +1,4 @@
-@import '../../Templates/css/reset';
-@import '../../Templates/css/style';
-
-
+@import url("../../Templates/css/reset.css");
 body {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   background: #1B1B1B;
