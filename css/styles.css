@@ -1,4 +1,7 @@
-@import url(/Users/kiyunkim/Documents/GitHub/Templates/css/reset.css);
+@import '../../Templates/css/reset';
+@import '../../Templates/css/style';
+
+
 body {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   background: #1B1B1B;
