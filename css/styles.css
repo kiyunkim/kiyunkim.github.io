@@ -1,4 +1,61 @@
-@import url(/Users/kiyunkim/Documents/GitHub/reset.css);
+@import url(/Users/kiyunkim/Documents/GitHub/Templates/css/reset.css);
+body {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  background: #1B1B1B;
+  line-height: 1.5;
+  font-size: 12px;
+  color: #C52F2F;
+}
+
+a {
+  color: #eee;
+}
+
+a[target=_blank]::after {
+  display: inline-block;
+  content: "\f08e";
+  font-size: .8em;
+  text-decoration: none;
+  font-family: "FontAwesome";
+  margin-left: .5em;
+}
+
+/*
+// ::-moz-selection 
+::selection {
+  color: yellow;
+  background: green;
+}
+*/
+.container {
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2%;
+}
+
+.container .avatar {
+  max-width: 100px;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  border-radius: 20%;
+}
+
+.container .intro {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.container .intro .title {
+  line-height: 1;
+  margin: .5em 0;
+  font-size: 1.5em;
+}
+
+.container .intro .summary {
+  margin: .5em 0;
+}
  
 
  /*# sourceMappingURL= styles.css.map */

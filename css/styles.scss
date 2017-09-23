@@ -1,1 +1,57 @@
-@import '../../reset';
+@import '../../Templates/css/reset';
+@import '../../Templates/css/style';
+
+$size: 12px;
+$color: #C52F2F;
+$color2: #eee;
+$bgColor: #1B1B1B;
+
+
+body {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  background: $bgColor;
+  line-height: 1.5;
+  font-size: $size;
+  color: $color;
+}
+a {
+  color: $color2;
+  &[target=_blank]::after {
+    display:inline-block;
+    content:"\f08e";
+    font-size: .8em;
+    text-decoration: none;
+    font-family: "FontAwesome";
+    margin-left: .5em;
+  }
+}
+/*
+// ::-moz-selection 
+::selection {
+  color: yellow;
+  background: green;
+}
+*/
+.container {
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2%;
+  .avatar {
+    max-width: 100px;
+    @include border-radius(20%);
+  }
+  .intro {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 5px;
+    .title {
+      line-height: 1;
+      margin: .5em 0;
+      font-size: 1.5em;
+    }
+    .summary {
+      margin: .5em 0;
+    }
+  }
+}
