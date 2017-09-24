@@ -1,14 +1,14 @@
 @import url("../../Templates/css/reset.css");
 body {
   font-family: Menlo, Monaco, 'Courier New', monospace;
-  background: #1B1B1B;
+  background: #fff;
   line-height: 1.5;
   font-size: 12px;
-  color: #C52F2F;
+  color: #222;
 }
 
 a {
-  color: #eee;
+  color: #C52F2F;
 }
 
 a[target=_blank]::after {
@@ -36,9 +36,6 @@ a[target=_blank]::after {
 
 .container .avatar {
   max-width: 100px;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
-  border-radius: 20%;
 }
 
 .container .intro {
@@ -58,4 +55,4 @@ a[target=_blank]::after {
 }
  
 
- /*# sourceMappingURL= styles.css.map */
+ /*# sourceMappingURL= style.css.map */
