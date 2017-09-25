@@ -1,4 +1,6 @@
 @import url('../../Templates/css/reset.css');
+@import url('../../Templates/css/style.scss');
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $size: 12px;
@@ -46,7 +48,7 @@ a {
     }
     .avatar {
       max-width: 100px;
-      // @include border-radius(20%);
+      @include border-radius(20%);
     }
     .intro {
       max-width: 400px;
