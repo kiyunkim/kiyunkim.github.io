@@ -1,5 +1,5 @@
-@import url('../../Templates/css/reset.css');
-@import url('../../Templates/css/style.scss');
+@import url('../Templates/css/reset.css');
+@import url('../Templates/css/style.scss');
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -9,7 +9,23 @@ $color2: #C52F2F;
 $bodyBg: #fff;
 $containerBg: #fff;
 
-
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -ms-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
 body {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   background: $bodyBg;
@@ -44,10 +60,10 @@ a {
     padding: 5%;
     margin: 5%;
     @media all and (max-width: 768px) {
-      margin: 0;
+      margin: 2%;
     }
     .avatar {
-      max-width: 100px;
+      max-width: 120px;
       @include border-radius(20%);
     }
     .intro {
@@ -57,7 +73,7 @@ a {
       .title {
         line-height: 1;
         margin: .5em 0;
-        font-size: 1.5em;
+        font-size: 1.8em;
       }
       .summary {
         margin: .5em 0;

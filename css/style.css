@@ -1,4 +1,5 @@
-@import url("../../Templates/css/reset.css");
+@import url("../Templates/css/reset.css");
+@import url("../Templates/css/style.scss");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
   font-family: Menlo, Monaco, 'Courier New', monospace;
@@ -42,12 +43,15 @@ a[target=_blank]::after {
 
 @media all and (max-width: 768px) {
   .container .content {
-    margin: 0;
+    margin: 2%;
   }
 }
 
 .container .content .avatar {
-  max-width: 100px;
+  max-width: 120px;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  border-radius: 20%;
 }
 
 .container .content .intro {
@@ -59,7 +63,7 @@ a[target=_blank]::after {
 .container .content .intro .title {
   line-height: 1;
   margin: .5em 0;
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 .container .content .intro .summary {
