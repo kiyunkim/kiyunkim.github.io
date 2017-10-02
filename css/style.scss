@@ -1,17 +1,18 @@
 @import url('../templates/css/reset.css');
 @import url('../templates/css/style.scss');
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-$mainFont: arial, helvetica, sans-serif;
-$headFont: Montserrat, $mainFont;
+$mainFont: 'Lato', arial, helvetica, sans-serif;
+$headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
-$size: 12px;
-$color: #222;
-$color2: #C52F2F;
-$bodyBg: #fff;
-$containerBg: #fff;
+$size: 18px;
+$black: #222;
+$red: #be2b2b;
+$white: #fff;
 $grey: #ccc;
 
 @mixin border-radius($radius) {
@@ -31,66 +32,110 @@ $grey: #ccc;
   -o-transition: $var;
   transition: $var;
 }
+
+// below from
+// joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+@mixin animation($animations) {
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
 body {
   font-family: $mainFont;
-  background: $bodyBg;
-  line-height: 1.5;
+  background: darken($red, 15%);
   font-size: $size;
-  color: $color;
-}
-a {
-  color: $color2;
-  &[target=_blank]::after {
-    display:inline-block;
-    content:"\f08e";
-    font-size: .8em;
-    text-decoration: none;
-    font-family: "FontAwesome";
-    margin-left: 4px;
+  color: $white;
+  @media screen and (max-width: 768px) {
+    font-size: $size - 4px;
   }
 }
+.flexbox {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-content-align: center;
+  align-content: center;
+}
+@include keyframes(show) {
+  0% {
+		opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+/*
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: center;
+    */
+
 .container {
-  max-width: 800px;
-  text-align: center;
-  margin: 2% auto;
-  .content {
-    background: $containerBg;
-    padding: 5%;
-    margin: 0 5%;
-    @media all and (max-width: 768px) {
-      margin: 2%;
-    }
-    .avatar {
-      max-width: 120px;
-      @include border-radius(20%);
-    }
-
-    .intro {
-      max-width: 400px;
-      margin: 0 auto 1em;
-      padding: 5px;
-      .title {
-        font-family: $headFont;
-        line-height: 1;
-        margin: .5em 0;
-        font-size: 2em;
-      }
-      .summary {
-        margin: .5em 0;
-      }
-    }
-
-    .col-2 {
-      display: inline-block;
-      @include border-radius(10px);
-      border: 1px solid $grey;
-      width: 40%;
-      padding: 2%;
-      margin: 0 1%;
-      h2 {
-        font-family: $headFont;
-        font-size: 1.5em;
-      }
-    }
+  max-width: 900px;
+  margin: 0 auto;
+}
+.main {
+  overflow-y: hidden;
+  padding: 0 3%;
+  height: 90vh;
+}
+.avatar {
+  max-width: 150px;
+  padding: 0 10px;
+  position: relative;
+  @include animation(show 1s ease);
+}
+.title {
+  width: 100%;
+  color: $white;
+  font-size: 5em;
+  font-family: $headFont;
+  position: relative;
+  @include animation(show 1.5s ease);
+}
+.summary {
+  @include animation(show 1.8s ease);
+  font-family: $headFont;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.3em;
+  a {
+    color: $white;
+    text-decoration: none;
+    border-bottom: 1px dotted $white;
   }
+}
+
+.contact {
+  width: 100%;
+  padding: 1.5em 0;
+  position: relative;
+  @include animation(show 1.8s ease);
 }

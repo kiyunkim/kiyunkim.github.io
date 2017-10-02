@@ -1,84 +1,146 @@
 @import url("../templates/css/reset.css");
 @import url("../templates/css/style.scss");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
-  font-family: arial, helvetica, sans-serif;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 12px;
-  color: #222;
+  font-family: "Lato", arial, helvetica, sans-serif;
+  background: #801d1d;
+  font-size: 18px;
+  color: #fff;
 }
 
-a {
-  color: #C52F2F;
-}
-
-a[target=_blank]::after {
-  display: inline-block;
-  content: "\f08e";
-  font-size: .8em;
-  text-decoration: none;
-  font-family: "FontAwesome";
-  margin-left: 4px;
-}
-
-.container {
-  max-width: 800px;
-  text-align: center;
-  margin: 2% auto;
-}
-
-.container .content {
-  background: #fff;
-  padding: 5%;
-  margin: 0 5%;
-}
-
-@media all and (max-width: 768px) {
-  .container .content {
-    margin: 2%;
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
   }
 }
 
-.container .content .avatar {
-  max-width: 120px;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
-  border-radius: 20%;
+.flexbox {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-content-align: center;
+  align-content: center;
 }
 
-.container .content .intro {
-  max-width: 400px;
-  margin: 0 auto 1em;
-  padding: 5px;
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
-.container .content .intro .title {
-  font-family: Montserrat, arial, helvetica, sans-serif;
-  line-height: 1;
-  margin: .5em 0;
-  font-size: 2em;
+@-moz-keyframes show {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
-.container .content .intro .summary {
-  margin: .5em 0;
+@-o-keyframes show {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
-.container .content .col-2 {
-  display: inline-block;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  width: 40%;
-  padding: 2%;
-  margin: 0 1%;
+@keyframes show {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
-.container .content .col-2 h2 {
-  font-family: Montserrat, arial, helvetica, sans-serif;
-  font-size: 1.5em;
+/*
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: center;
+    */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main {
+  overflow-y: hidden;
+  padding: 0 3%;
+  height: 90vh;
+}
+
+.avatar {
+  max-width: 150px;
+  padding: 0 10px;
+  position: relative;
+  -webkit-animation: show 1s ease;
+  -moz-animation: show 1s ease;
+  -o-animation: show 1s ease;
+  animation: show 1s ease;
+}
+
+.title {
+  width: 100%;
+  color: #fff;
+  font-size: 5em;
+  font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
+  position: relative;
+  -webkit-animation: show 1.5s ease;
+  -moz-animation: show 1.5s ease;
+  -o-animation: show 1.5s ease;
+  animation: show 1.5s ease;
+}
+
+.summary {
+  -webkit-animation: show 1.8s ease;
+  -moz-animation: show 1.8s ease;
+  -o-animation: show 1.8s ease;
+  animation: show 1.8s ease;
+  font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.3em;
+}
+
+.summary a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+}
+
+.contact {
+  width: 100%;
+  padding: 1.5em 0;
+  position: relative;
+  -webkit-animation: show 1.8s ease;
+  -moz-animation: show 1.8s ease;
+  -o-animation: show 1.8s ease;
+  animation: show 1.8s ease;
 }
  
 
