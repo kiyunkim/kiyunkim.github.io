@@ -22,12 +22,7 @@ a:hover, a:focus {
   opacity: 1;
 }
 
-header {
-  width: 100%;
-  background: #be2b2b;
-}
-
-header .flexbox {
+.flexbox {
   max-width: 800px;
   margin: 0 auto;
   display: -webkit-flex;
@@ -39,12 +34,17 @@ header .flexbox {
   align-items: center;
 }
 
-header .flexbox .avatar {
+header {
+  width: 100%;
+  background: #be2b2b;
+}
+
+header .avatar {
   max-width: 100px;
   padding: 10px;
 }
 
-header .flexbox .title {
+header .title {
   color: #fff;
   margin-left: 10px;
   font-size: 2em;
@@ -53,32 +53,61 @@ header .flexbox .title {
 
 .container {
   max-width: 800px;
-  margin: 2% auto;
+  margin: 5% auto;
   padding: 0 2%;
-  /*
-
-    .col-2 {
-      display: inline-block;
-      @include border-radius(10px);
-      border: 1px solid $grey;
-      width: 40%;
-      padding: 2%;
-      margin: 0 1%;
-      h2 {
-        font-family: $headFont;
-        font-size: 1.5em;
-      }
-    }
-  }
-  */
 }
 
-.container .contact a {
+.container .intro {
+  margin: 5% 0;
+}
+
+.container .main {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.container .main .col {
+  width: 49%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container .main .col .col-title {
+  padding: .5em;
+  background: #f2f2f2;
+  font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
+}
+
+.container .main .col li {
+  margin: .5em;
+}
+
+footer {
+  background: #e6e6e6;
+  width: 100%;
+}
+
+footer .contact {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: center;
+  -ms-flex-pack: justify;
+  -moz-box-pack: justify;
+  justify-content: center;
+  padding: 10px;
+}
+
+footer .contact a {
   border: none;
+  padding: 1%;
+  margin: 0 10px;
 }
 
-.container .contact img {
-  height: 20px;
+footer .contact img {
+  display: block;
+  height: 30px;
 }
  
 
