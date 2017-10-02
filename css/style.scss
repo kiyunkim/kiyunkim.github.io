@@ -1,7 +1,7 @@
 @import url('../templates/css/reset.css');
 @import url('../templates/css/style.scss');
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -32,99 +32,106 @@ $grey: #ccc;
   -o-transition: $var;
   transition: $var;
 }
-@mixin flexbox($flex) {
 
+// below from
+// joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+@mixin animation($animations) {
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
 }
-
-body {
-  font-family: $mainFont;
-  background: $white;
-  line-height: 1.5;
-  font-size: $size;
-  color: $black;
-}
-a {
-  color: $black;
-  opacity: 0.5;
-  text-decoration: none;
-  border-bottom: 1px solid $black;
-  &:hover, &:focus {
-    opacity: 1;
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
   }
 }
+body {
+  font-family: $mainFont;
+  background: darken($red, 15%);
+  font-size: $size;
+  color: $white;
+}
 .flexbox {
-  max-width: 800px;
-  margin: 0 auto;
   display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-align-content: center;
+  -ms-content-align: center;
+  align-content: center;
 }
-
-header {
-  width: 100%;
-  background: $red;
-    .avatar {
-      max-width: 100px;
-      padding: 10px;
-    }
-    .title {
-      color: $white;
-      margin-left: 10px;
-      font-size: 2em;
-      font-family: $headFont;
-    }
-}
-
-.container {
-  max-width: 800px;
-  margin: 5% auto;
-  padding: 0 2%;
-  .intro {
-    margin: 5% 0;
+@include keyframes(show) {
+  0% {
+		opacity: 0;
+    top: 50px;
   }
-  .main {
-    margin: 10px 0;
-    width: 100%;
-    .col {
-      .col-title {
-        padding: .5em;
-        background: lighten($grey, 15%);
-        font-family: $headFont;
-      }
-      width: 49%;
-      // padding: 2%;
-      display: inline-block;
-      border: 1px solid $grey;
-      @include box-sizing();
-      li {
-        margin: .5em;
-      }
-    }
+  100% {
+    opacity: 1;
+    top: 0;
   }
 }
-
-footer {
-  background: lighten($grey, 10%);
-  width: 100%;
-  .contact {
+/*
     -webkit-box-pack: justify;
     -webkit-justify-content: center;
     -ms-flex-pack: justify;
     -moz-box-pack: justify;
     justify-content: center;
-    padding: 10px;
-    a {
-      border: none;
-      padding: 1%;
-      margin: 0 10px;
-    }
-    img {
-      display: block;
-      height: 30px;
-    }
+    */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.main {
+  overflow-y: hidden;
+  height: 90vh;
+}
+.avatar {
+  max-width: 150px;
+  padding: 0 10px;
+  position: relative;
+  @include animation(show 1s ease);
+}
+.title {
+  width: 100%;
+  color: $white;
+  font-size: 5em;
+  font-family: $headFont;
+  position: relative;
+  @include animation(show 1.5s ease);
+}
+.summary {
+  @include animation(show 1.8s ease);
+  font-family: $headFont;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.3em;
+  a {
+    color: $white;
+    text-decoration: none;
+    border-bottom: 1px dotted $white;
   }
+}
+
+.contact {
+  width: 100%;
+  padding: 1.5em 0;
+  position: relative;
+  @include animation(show 1.8s ease);
 }
