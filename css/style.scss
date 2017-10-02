@@ -2,16 +2,17 @@
 @import url('../templates/css/style.scss');
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-$mainFont: arial, helvetica, sans-serif;
-$headFont: Montserrat, $mainFont;
+$mainFont: 'Lato', arial, helvetica, sans-serif;
+$headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
-$size: 12px;
-$color: #222;
-$color2: #C52F2F;
-$bodyBg: #fff;
-$containerBg: #fff;
+$size: 18px;
+$black: #222;
+$red: #be2b2b;
+$white: #fff;
 $grey: #ccc;
 
 @mixin border-radius($radius) {
@@ -31,54 +32,65 @@ $grey: #ccc;
   -o-transition: $var;
   transition: $var;
 }
+
+
 body {
   font-family: $mainFont;
-  background: $bodyBg;
+  background: $white;
   line-height: 1.5;
   font-size: $size;
-  color: $color;
+  color: $black;
 }
 a {
-  color: $color2;
-  &[target=_blank]::after {
-    display:inline-block;
-    content:"\f08e";
-    font-size: .8em;
-    text-decoration: none;
-    font-family: "FontAwesome";
-    margin-left: 4px;
+  color: $black;
+  opacity: 0.5;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
+  &:hover, &:focus {
+    opacity: 1;
   }
 }
+header {
+  width: 100%;
+  background: $red;
+  .flexbox {
+    max-width: 800px;
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    .avatar {
+      max-width: 100px;
+      padding: 10px;
+    }
+    .title {
+      color: $white;
+      margin-left: 10px;
+      font-size: 2em;
+      font-family: $headFont;
+    }
+  }
+}
+
 .container {
   max-width: 800px;
-  text-align: center;
   margin: 2% auto;
-  .content {
-    background: $containerBg;
-    padding: 5%;
-    margin: 0 5%;
-    @media all and (max-width: 768px) {
-      margin: 2%;
-    }
-    .avatar {
-      max-width: 120px;
-      @include border-radius(20%);
-    }
+  padding: 0 2%;
 
-    .intro {
-      max-width: 400px;
-      margin: 0 auto 1em;
-      padding: 5px;
-      .title {
-        font-family: $headFont;
-        line-height: 1;
-        margin: .5em 0;
-        font-size: 2em;
-      }
-      .summary {
-        margin: .5em 0;
-      }
+
+  .contact {
+    a {
+      border: none;
     }
+    img {
+      height: 20px;
+    }
+  }
+  /*
 
     .col-2 {
       display: inline-block;
@@ -93,4 +105,5 @@ a {
       }
     }
   }
+  */
 }

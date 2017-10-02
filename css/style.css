@@ -1,84 +1,84 @@
 @import url("../templates/css/reset.css");
 @import url("../templates/css/style.scss");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
-  font-family: arial, helvetica, sans-serif;
+  font-family: "Lato", arial, helvetica, sans-serif;
   background: #fff;
   line-height: 1.5;
-  font-size: 12px;
+  font-size: 18px;
   color: #222;
 }
 
 a {
-  color: #C52F2F;
+  color: #222;
+  opacity: 0.5;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
 }
 
-a[target=_blank]::after {
-  display: inline-block;
-  content: "\f08e";
-  font-size: .8em;
-  text-decoration: none;
-  font-family: "FontAwesome";
-  margin-left: 4px;
+a:hover, a:focus {
+  opacity: 1;
+}
+
+header {
+  width: 100%;
+  background: #be2b2b;
+}
+
+header .flexbox {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header .flexbox .avatar {
+  max-width: 100px;
+  padding: 10px;
+}
+
+header .flexbox .title {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 2em;
+  font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
 }
 
 .container {
   max-width: 800px;
-  text-align: center;
   margin: 2% auto;
-}
+  padding: 0 2%;
+  /*
 
-.container .content {
-  background: #fff;
-  padding: 5%;
-  margin: 0 5%;
-}
-
-@media all and (max-width: 768px) {
-  .container .content {
-    margin: 2%;
+    .col-2 {
+      display: inline-block;
+      @include border-radius(10px);
+      border: 1px solid $grey;
+      width: 40%;
+      padding: 2%;
+      margin: 0 1%;
+      h2 {
+        font-family: $headFont;
+        font-size: 1.5em;
+      }
+    }
   }
+  */
 }
 
-.container .content .avatar {
-  max-width: 120px;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
-  border-radius: 20%;
+.container .contact a {
+  border: none;
 }
 
-.container .content .intro {
-  max-width: 400px;
-  margin: 0 auto 1em;
-  padding: 5px;
-}
-
-.container .content .intro .title {
-  font-family: Montserrat, arial, helvetica, sans-serif;
-  line-height: 1;
-  margin: .5em 0;
-  font-size: 2em;
-}
-
-.container .content .intro .summary {
-  margin: .5em 0;
-}
-
-.container .content .col-2 {
-  display: inline-block;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  width: 40%;
-  padding: 2%;
-  margin: 0 1%;
-}
-
-.container .content .col-2 h2 {
-  font-family: Montserrat, arial, helvetica, sans-serif;
-  font-size: 1.5em;
+.container .contact img {
+  height: 20px;
 }
  
 
