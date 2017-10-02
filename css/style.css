@@ -10,6 +10,12 @@ body {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 .flexbox {
   display: -webkit-flex;
   display: -webkit-box;
@@ -84,6 +90,7 @@ body {
 
 .main {
   overflow-y: hidden;
+  padding: 0 3%;
   height: 90vh;
 }
 
