@@ -11,9 +11,10 @@ $headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
 $size: 18px;
 $black: #222;
-$red: #be2b2b;
+$red: #740000;
 $white: #fff;
 $grey: #ccc;
+$linkpadding: 3px;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -57,11 +58,11 @@ $grey: #ccc;
 }
 body {
   font-family: $mainFont;
-  background: darken($red, 15%);
+  background: $red;
   font-size: $size;
   color: $white;
   @media screen and (max-width: 768px) {
-    font-size: $size - 4px;
+    font-size: $size - 5px;
   }
 }
 .flexbox {
@@ -102,40 +103,74 @@ body {
   margin: 0 auto;
 }
 .main {
-  overflow-y: hidden;
   padding: 0 3%;
-  height: 90vh;
+  height: 100vh;
 }
 .avatar {
-  max-width: 150px;
-  padding: 0 10px;
+  max-width: 100px;
   position: relative;
+  margin-bottom: 1em;
   @include animation(show 1s ease);
+  @media screen and (max-width: 768px) {
+    max-width: 80px;
+  }
 }
 .title {
   width: 100%;
   color: $white;
   font-size: 5em;
+  line-height: 1;
   font-family: $headFont;
   position: relative;
-  @include animation(show 1.5s ease);
+  @include animation(show 1.3s ease);
 }
 .summary {
   @include animation(show 1.8s ease);
+  left: .1em;
+  line-height: 1.8;
   font-family: $headFont;
   font-weight: 300;
   position: relative;
   font-size: 2.3em;
   a {
     color: $white;
+    padding: $linkpadding;
+    position: relative; 
     text-decoration: none;
-    border-bottom: 1px dotted $white;
+    @include transition(all .4s ease);
+    &:hover,
+    &:focus {
+      color: $red;
+    }
+    &::after {
+      content: '';
+      z-index: -1;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      bottom: 1px;
+      height: 2px;
+      background: $white;
+      @include transition(all .3s ease);
+    }
+    &:hover::after,
+    &:focus::after {
+      height: calc(1em + (2 * #{$linkpadding}));
+    }
   }
 }
 
 .contact {
   width: 100%;
-  padding: 1.5em 0;
+  margin: 2.5em 0 4em;
   position: relative;
   @include animation(show 1.8s ease);
+  a {
+    font-size: 1.3em;
+    color: $white;
+    padding: 5px;
+    @media screen and (max-width: 768px) {
+      font-size: 1.5em;
+    }
+  }
 }

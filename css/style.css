@@ -5,14 +5,14 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
   font-family: "Lato", arial, helvetica, sans-serif;
-  background: #801d1d;
+  background: #740000;
   font-size: 18px;
   color: #fff;
 }
 
 @media screen and (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -89,31 +89,37 @@ body {
 }
 
 .main {
-  overflow-y: hidden;
   padding: 0 3%;
-  height: 90vh;
+  height: 100vh;
 }
 
 .avatar {
-  max-width: 150px;
-  padding: 0 10px;
+  max-width: 100px;
   position: relative;
+  margin-bottom: 1em;
   -webkit-animation: show 1s ease;
   -moz-animation: show 1s ease;
   -o-animation: show 1s ease;
   animation: show 1s ease;
 }
 
+@media screen and (max-width: 768px) {
+  .avatar {
+    max-width: 80px;
+  }
+}
+
 .title {
   width: 100%;
   color: #fff;
   font-size: 5em;
+  line-height: 1;
   font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
   position: relative;
-  -webkit-animation: show 1.5s ease;
-  -moz-animation: show 1.5s ease;
-  -o-animation: show 1.5s ease;
-  animation: show 1.5s ease;
+  -webkit-animation: show 1.3s ease;
+  -moz-animation: show 1.3s ease;
+  -o-animation: show 1.3s ease;
+  animation: show 1.3s ease;
 }
 
 .summary {
@@ -121,6 +127,8 @@ body {
   -moz-animation: show 1.8s ease;
   -o-animation: show 1.8s ease;
   animation: show 1.8s ease;
+  left: .1em;
+  line-height: 1.8;
   font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
   font-weight: 300;
   position: relative;
@@ -129,18 +137,60 @@ body {
 
 .summary a {
   color: #fff;
+  padding: 3px;
+  position: relative;
   text-decoration: none;
-  border-bottom: 1px dotted #fff;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.summary a:hover, .summary a:focus {
+  color: #740000;
+}
+
+.summary a::after {
+  content: '';
+  z-index: -1;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  bottom: 1px;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.summary a:hover::after, .summary a:focus::after {
+  height: calc(1em + (2 * 3px));
 }
 
 .contact {
   width: 100%;
-  padding: 1.5em 0;
+  margin: 2.5em 0 4em;
   position: relative;
   -webkit-animation: show 1.8s ease;
   -moz-animation: show 1.8s ease;
   -o-animation: show 1.8s ease;
   animation: show 1.8s ease;
+}
+
+.contact a {
+  font-size: 1.3em;
+  color: #fff;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact a {
+    font-size: 1.5em;
+  }
 }
  
 
