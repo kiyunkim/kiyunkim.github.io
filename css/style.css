@@ -148,7 +148,7 @@ body {
 }
 
 .summary a:hover, .summary a:focus {
-  color: #740000;
+  color: #222;
 }
 
 .summary a::after {

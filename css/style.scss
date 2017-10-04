@@ -140,7 +140,7 @@ body {
     @include transition(all .4s ease);
     &:hover,
     &:focus {
-      color: $red;
+      color: $black;
     }
     &::after {
       content: '';
