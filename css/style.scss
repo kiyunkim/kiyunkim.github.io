@@ -11,9 +11,10 @@ $headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
 $size: 18px;
 $black: #222;
-$red: #be2b2b;
+$red: #740000;
 $white: #fff;
 $grey: #ccc;
+$linkpadding: 3px;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -57,11 +58,11 @@ $grey: #ccc;
 }
 body {
   font-family: $mainFont;
-  background: darken($red, 15%);
+  background: $red;
   font-size: $size;
   color: $white;
   @media screen and (max-width: 768px) {
-    font-size: $size - 4px;
+    font-size: $size - 5px;
   }
 }
 .flexbox {
@@ -107,9 +108,12 @@ body {
 }
 .avatar {
   max-width: 100px;
-  // padding: 0 10px;
   position: relative;
+  margin-bottom: 1em;
   @include animation(show 1s ease);
+  @media screen and (max-width: 768px) {
+    max-width: 80px;
+  }
 }
 .title {
   width: 100%;
@@ -130,12 +134,14 @@ body {
   font-size: 2.3em;
   a {
     color: $white;
-    padding: 2px;
+    padding: $linkpadding;
     position: relative; 
     text-decoration: none;
     @include transition(all .4s ease);
-    &:hover {
-      color: $black;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $red;
     }
     &::after {
       content: '';
@@ -143,13 +149,15 @@ body {
       width: 100%;
       left: 0;
       position: absolute;
-      bottom: 2px;
+      bottom: 1px;
       height: 2px;
       background: $white;
       @include transition(all .3s ease);
     }
-    &:hover::after {
-      height: 1em;
+    &:hover::after,
+    &:active::after,
+    &:focus::after {
+      height: calc(1em + (2 * #{$linkpadding}));
     }
   }
 }
@@ -163,5 +171,8 @@ body {
     font-size: 1.3em;
     color: $white;
     padding: 5px;
+    @media screen and (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 }

@@ -5,14 +5,14 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
   font-family: "Lato", arial, helvetica, sans-serif;
-  background: #801d1d;
+  background: #740000;
   font-size: 18px;
   color: #fff;
 }
 
 @media screen and (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -96,10 +96,17 @@ body {
 .avatar {
   max-width: 100px;
   position: relative;
+  margin-bottom: 1em;
   -webkit-animation: show 1s ease;
   -moz-animation: show 1s ease;
   -o-animation: show 1s ease;
   animation: show 1s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .avatar {
+    max-width: 80px;
+  }
 }
 
 .title {
@@ -130,7 +137,7 @@ body {
 
 .summary a {
   color: #fff;
-  padding: 2px;
+  padding: 3px;
   position: relative;
   text-decoration: none;
   -webkit-transition: all 0.4s ease;
@@ -140,8 +147,8 @@ body {
   transition: all 0.4s ease;
 }
 
-.summary a:hover {
-  color: #222;
+.summary a:hover, .summary a:active, .summary a:focus {
+  color: #740000;
 }
 
 .summary a::after {
@@ -150,7 +157,7 @@ body {
   width: 100%;
   left: 0;
   position: absolute;
-  bottom: 2px;
+  bottom: 1px;
   height: 2px;
   background: #fff;
   -webkit-transition: all 0.3s ease;
@@ -160,8 +167,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.summary a:hover::after {
-  height: 1em;
+.summary a:hover::after, .summary a:active::after, .summary a:focus::after {
+  height: calc(1em + (2 * 3px));
 }
 
 .contact {
@@ -178,6 +185,12 @@ body {
   font-size: 1.3em;
   color: #fff;
   padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact a {
+    font-size: 1.5em;
+  }
 }
  
 
