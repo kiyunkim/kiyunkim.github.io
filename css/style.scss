@@ -58,7 +58,7 @@ body {
   font-size: $size;
   color: $white;
   @media screen and (max-width: 768px) {
-    font-size: $size - 5px;
+    font-size: $size - 5;
   }
 }
 .flexbox {
@@ -136,14 +136,15 @@ body {
       width: 100%;
       left: 0;
       position: absolute;
-      bottom: 1px;
+      bottom: 0;
       height: 2px;
       background: $white;
       @include transition(all .3s ease);
     }
     &:hover::after,
     &:focus::after {
-      height: calc(1em + (2 * #{$linkpadding}));
+      // height: calc(1em + (2 * #{$linkpadding}));
+      height: 1.4em;
     }
   }
 }

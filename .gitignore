@@ -18,3 +18,5 @@ racial-microaggressions/
 .DS_Store
 .DS_Store
 css/style.css.map
+*.map
+*.map
