@@ -147,7 +147,7 @@ body {
   width: 100%;
   left: 0;
   position: absolute;
-  bottom: 1px;
+  bottom: 0;
   height: 2px;
   background: #fff;
   -webkit-transition: all 0.3s ease;
@@ -158,7 +158,7 @@ body {
 }
 
 .summary a:hover::after, .summary a:focus::after {
-  height: calc(1em + (2 * 3px));
+  height: 1.4em;
 }
 
 .contact {

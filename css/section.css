@@ -147,7 +147,7 @@ body {
   width: 100%;
   left: 0;
   position: absolute;
-  bottom: 1px;
+  bottom: 0;
   height: 2px;
   background: #fff;
   -webkit-transition: all 0.3s ease;
@@ -158,7 +158,7 @@ body {
 }
 
 .summary a:hover::after, .summary a:focus::after {
-  height: calc(1em + (2 * 3px));
+  height: 1.4em;
 }
 
 .contact {
@@ -190,48 +190,99 @@ body {
   animation: 0;
 }
 
+.header {
+  padding: 1em;
+}
+
 .avatar {
-  padding: 15%;
+  display: block;
   margin: 0;
+  padding: 10%;
+  margin-right: .5em;
 }
 
 .title {
   width: auto;
+  font-size: 4em;
 }
 
 .main {
-  padding: 3%;
+  padding: 5% 3%;
   height: auto;
   color: #222;
   background: #fff;
 }
 
-.main .summary a {
-  z-index: 2;
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 5% 20px;
+  }
+}
+
+.main a {
+  z-index: 1;
   color: #222;
 }
 
-.main .summary a::after {
-  z-index: 0;
+.main a::after {
+  z-index: -1;
   background: #222;
 }
 
-.main .summary a:hover {
+.main a:hover {
   color: #fff;
 }
 
-.main .summary a:hover::after {
+.main a:hover::after {
   background: #222;
+}
+
+.main p:not(.summary) {
+  font-size: 1em;
+  margin: .5em 0;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+  .main p:not(.summary) {
+    font-size: 16px;
+  }
+}
+
+.main p:not(.summary) a {
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.main p:not(.summary) a:hover, .main p:not(.summary) a:focus {
+  background-color: #222;
 }
 
 .footer {
   margin: 0;
-  padding: 2%;
+  padding: 1.5em 1em;
   background: #ccc;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .footer a {
-  margin: 0 1em;
+  padding: 0 .5em;
+  color: #222;
+}
+
+.footer .copyright {
+  font-size: .8em;
+  padding: 0 .5em;
+  margin-lefT: auto;
   color: #222;
 }
  

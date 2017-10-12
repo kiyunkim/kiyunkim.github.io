@@ -2,41 +2,75 @@
 .avatar, .title, .summary, .contact {
   @include animation(0);
 }
-.avatar { 
-  padding: 15%;
+.header {
+  padding: 1em;
+}
+.avatar {
+  display: block;
   margin: 0;
+  padding: 10%;
+  margin-right: .5em;
 }
 .title {
   width: auto;
+  font-size: 4em;
 }
 .main {
-  padding: 3%;
+  padding: 5% 3%;
   height: auto;
   color: $black;
   background: $white;
-  .summary {
+  @media screen and (max-width: 768px) {
+    padding: 5% 20px;
+  }
+  a {
+    z-index: 1;
+    color: $black;
+    &::after {
+      z-index: -1;
+      background: $black;
+    }
+    &:hover {
+      color: $white;
+    }
+    &:hover::after {
+      background: $black;
+    }
+  }
+  p:not(.summary) {
+    font-size: 1em;
+    margin: .5em 0;
+    line-height: 1.4;
+    @media screen and (max-width: 768px) {
+      font-size: $size - 2;
+    }
     a {
-      z-index: 2;
-      color: $black;
-      &::after {
-        z-index: 0;
-        background: $black;
-      }
-      &:hover {
-        color: $white;
-      }
-      &:hover::after {
-        background: $black;
+      text-decoration: none;
+      border-bottom: 1px solid $black;
+      @include transition(all .4s ease);
+      &:hover, &:focus {
+        background-color: $black;
       }
     }
   }
 }
 .footer {
   margin: 0;
-  padding: 2%;
+  padding: 1.5em 1em;
   background: $grey;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	justify-content: space-between;
   a {
-    margin: 0 1em;
+    padding: 0 .5em;
+    color: $black;
+  }
+  .copyright {
+    font-size: .8em;
+    padding: 0 .5em;
+    margin-lefT: auto;
     color: $black;
   }
 }
