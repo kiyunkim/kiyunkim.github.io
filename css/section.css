@@ -182,6 +182,58 @@ body {
     font-size: 1.5em;
   }
 }
+
+.avatar, .title, .summary, .contact {
+  -webkit-animation: 0;
+  -moz-animation: 0;
+  -o-animation: 0;
+  animation: 0;
+}
+
+.avatar {
+  padding: 15%;
+  margin: 0;
+}
+
+.title {
+  width: auto;
+}
+
+.main {
+  padding: 3%;
+  height: auto;
+  color: #222;
+  background: #fff;
+}
+
+.main .summary a {
+  z-index: 2;
+  color: #222;
+}
+
+.main .summary a::after {
+  z-index: 0;
+  background: #222;
+}
+
+.main .summary a:hover {
+  color: #fff;
+}
+
+.main .summary a:hover::after {
+  background: #222;
+}
+
+.footer {
+  margin: 0;
+  padding: 2%;
+  background: #ccc;
+}
+
+.footer a {
+  margin: 0 1em;
+  color: #222;
+}
  
 
- /*# sourceMappingURL= style.css.map */
+ /*# sourceMappingURL= section.css.map */

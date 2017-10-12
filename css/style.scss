@@ -1,12 +1,8 @@
-@import url('../templates/css/reset.css');
-@import url('../templates/css/style.scss');
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-$mainFont: 'Lato', arial, helvetica, sans-serif;
+$mainFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
 $size: 18px;
@@ -90,14 +86,6 @@ body {
     top: 0;
   }
 }
-/*
-    -webkit-box-pack: justify;
-    -webkit-justify-content: center;
-    -ms-flex-pack: justify;
-    -moz-box-pack: justify;
-    justify-content: center;
-    */
-
 .container {
   max-width: 900px;
   margin: 0 auto;

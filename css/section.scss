@@ -1,0 +1,42 @@
+@import 'style';
+.avatar, .title, .summary, .contact {
+  @include animation(0);
+}
+.avatar { 
+  padding: 15%;
+  margin: 0;
+}
+.title {
+  width: auto;
+}
+.main {
+  padding: 3%;
+  height: auto;
+  color: $black;
+  background: $white;
+  .summary {
+    a {
+      z-index: 2;
+      color: $black;
+      &::after {
+        z-index: 0;
+        background: $black;
+      }
+      &:hover {
+        color: $white;
+      }
+      &:hover::after {
+        background: $black;
+      }
+    }
+  }
+}
+.footer {
+  margin: 0;
+  padding: 2%;
+  background: $grey;
+  a {
+    margin: 0 1em;
+    color: $black;
+  }
+}
