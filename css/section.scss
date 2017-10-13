@@ -1,4 +1,7 @@
 @import 'style';
+body {
+  background: $white;
+}
 .avatar, .title, .summary, .contact {
   @include animation(0);
 }
@@ -12,6 +15,7 @@
   margin-right: .5em;
 }
 .title {
+  color: $red;
   width: auto;
   font-size: 4em;
 }
@@ -45,6 +49,7 @@
       font-size: $size - 2;
     }
     a {
+      padding: 1px;
       text-decoration: none;
       border-bottom: 1px solid $black;
       @include transition(all .4s ease);
@@ -57,7 +62,7 @@
 .footer {
   margin: 0;
   padding: 1.5em 1em;
-  background: $grey;
+  background: darken($white, 10%);
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
 	-webkit-justify-content: space-between;

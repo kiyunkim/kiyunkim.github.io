@@ -158,7 +158,7 @@ body {
 }
 
 .summary a:hover::after, .summary a:focus::after {
-  height: 1.4em;
+  height: 1.25em;
 }
 
 .contact {
@@ -183,6 +183,10 @@ body {
   }
 }
 
+body {
+  background: #fff;
+}
+
 .avatar, .title, .summary, .contact {
   -webkit-animation: 0;
   -moz-animation: 0;
@@ -202,6 +206,7 @@ body {
 }
 
 .title {
+  color: #740000;
   width: auto;
   font-size: 4em;
 }
@@ -250,6 +255,7 @@ body {
 }
 
 .main p:not(.summary) a {
+  padding: 1px;
   text-decoration: none;
   border-bottom: 1px solid #222;
   -webkit-transition: all 0.4s ease;
@@ -266,7 +272,7 @@ body {
 .footer {
   margin: 0;
   padding: 1.5em 1em;
-  background: #ccc;
+  background: #e6e6e6;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
