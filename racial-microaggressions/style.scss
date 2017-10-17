@@ -51,5 +51,5 @@ body {
 
 img[data-src] {
   opacity: 0;
-  @include transition(opacity 1s ease);
+  @include transition(opacity 2s ease-in);
 }
