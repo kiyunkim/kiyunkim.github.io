@@ -61,5 +61,5 @@ img[data-src] {
   opacity: 0;
   top: 30px;
   position: relative;
-  @include transition(all 2s ease-in);
+  @include transition(all 1s ease-in);
 }
