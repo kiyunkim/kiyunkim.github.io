@@ -46,7 +46,7 @@
 <script src="../scripts/unveil-master/jquery.unveil.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-  $("img").unveil(function() {
+  $("img").unveil(10, function() {
     $(this).load(function() {
       $(this).css('opacity', 1);
     })
