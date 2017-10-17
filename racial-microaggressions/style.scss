@@ -59,7 +59,7 @@ body {
 
 img[data-src] {
   opacity: 0;
-  top: 30px;
+  top: 80px;
   position: relative;
   @include transition(all .5s ease-in);
 }
