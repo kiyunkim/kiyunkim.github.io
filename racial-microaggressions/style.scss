@@ -1,0 +1,55 @@
+@import url('../Templates/css/reset.css');
+@import '../Templates/css/style';
+
+
+$accent: #bc0000; // ff6d85
+$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -ms-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
+
+body {
+  font-family: $fontfamily;
+  background: #fafafa;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container {
+  display: table;
+  padding: 1em;
+  margin: 1em 0;
+  width: 100%;
+  @media all and (max-width: 768px) {
+    margin: 0;
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+
+img[data-src] {
+  opacity: 0;
+  @include transition(opacity 1s ease);
+}

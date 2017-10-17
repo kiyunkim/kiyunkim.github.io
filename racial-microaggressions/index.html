@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kiyun's GitHub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/png" href="images/logo.png" />
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Racial Microaggressions by Kiyun Kim</title>
+  <meta name="author" content="Kiyun Kim">
+  <meta name="description" content="Photo series on racial microaggressions by Kiyun Kim" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="../templates/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
-
 <body ontouchstart="">
+
+  <div class="wrapper">
+    <div class="container">
+    <div class="content">
+      
+      <img alt="" src="images/amber.jpg">
+      <img alt="" src="images/amanda.jpg" data-src="images/amanda.jpg">
+      <img alt="" src="images/aj.jpg" data-src="images/aj.jpg">
+      <img alt="" src="images/aja.jpg" data-src="images/aja.jpg">
+      <img alt="" src="images/alice.jpg" data-src="images/alice.jpg">
+      <img alt="" src="images/cesca.jpg">
+      <img alt="" src="images/darby.jpg">
+      <img alt="" src="images/garrett.jpg">
+      <img alt="" src="images/hydn.jpg">
+      <img alt="" src="images/jackie.jpg">
+      <img alt="" src="images/jaime.jpg">
+      <img alt="" src="images/josh.jpg">
+      <img alt="" src="images/kristina.jpg">
+      <img alt="" src="images/maya.jpg">
+      <img alt="" src="images/michele.jpg">
+      <img alt="" src="images/mika.jpg">
+      <img alt="" src="images/nisarah.jpg">
+      <img alt="" src="images/sandra.jpg">
+      <img alt="" src="images/sri.jpg">
+      <img alt="" src="images/wallis.jpg">
+      <img alt="" src="images/winter.jpg">
+        
+    </div>
+  </div>
+  </div>
+
+
   
-  <h2>test</h2>
-</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../scripts/unveil-master/jquery.unveil.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("img").unveil(function() {
+    $(this).load(function() {
+      $(this).css('opacity', 1);
+    })
+  });
+
+
+
+
+	//back to top
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 200) {
+			$('#backtotop').fadeIn();
+		} else {
+			$('#backtotop').fadeOut();
+		}
+	});
+	$('#backtotop').on('click keypress', function() {
+		$("html, body").animate({scrollTop: 0}, 500);
+		return false;
+	});
+});
+</script>
 
 </body>
 </html>

@@ -1,0 +1,41 @@
+@import url("../Templates/css/reset.css");
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: #fafafa;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container {
+  display: table;
+  padding: 1em;
+  margin: 1em 0;
+  width: 100%;
+}
+
+@media all and (max-width: 768px) {
+  .container {
+    margin: 0;
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+img[data-src] {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+ 
+
+ /*# sourceMappingURL= style.css.map */
