@@ -6,7 +6,6 @@
   <meta name="author" content="Kiyun Kim">
   <meta name="description" content="Photo series on racial microaggressions by Kiyun Kim" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="../css/reset.css" />
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
@@ -48,7 +47,10 @@
 $(document).ready(function() {
   $("img").unveil(0, function() {
     $(this).on('load', function() {
-      $(this).css('opacity', 1);
+      $(this).css({
+        'opacity' : '1',
+        'top' : '0'
+      });
     })
   });
 

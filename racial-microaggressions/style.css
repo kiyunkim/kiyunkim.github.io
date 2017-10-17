@@ -1,4 +1,4 @@
-@import url("../Templates/css/reset.css");
+@import url("../css/reset.css");
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   background: #fafafa;
@@ -30,11 +30,13 @@ body {
 
 img[data-src] {
   opacity: 0;
-  -webkit-transition: opacity 1s ease;
-  -moz-transition: opacity 1s ease;
-  -ms-transition: opacity 1s ease;
-  -o-transition: opacity 1s ease;
-  transition: opacity 1s ease;
+  top: 30px;
+  position: relative;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
 }
  
 
