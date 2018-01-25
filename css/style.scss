@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
-// @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 $mainFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -29,6 +28,13 @@ $linkpadding: 3px;
   -o-transition: $var;
   transition: $var;
 }
+@mixin transform($var) {
+  -webkit-transform: $var;
+  -moz-transform: $var;
+  -ms-transform: $var;
+  -o-transform: $var;
+  transform: $var;
+}
 
 // below from
 // joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
@@ -52,6 +58,7 @@ $linkpadding: 3px;
     @content;
   }
 }
+
 body {
   font-family: $mainFont;
   background: $red;
@@ -144,7 +151,7 @@ body {
     &:hover::after,
     &:focus::after {
       // height: calc(1em + (2 * #{$linkpadding}));
-      height: 1.3em;
+      height: 1.25em;
     }
   }
 }

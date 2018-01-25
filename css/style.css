@@ -158,7 +158,7 @@ body {
 }
 
 .summary a:hover::after, .summary a:focus::after {
-  height: 1.3em;
+  height: 1.25em;
 }
 
 .contact {
@@ -182,6 +182,4 @@ body {
     font-size: 1.5em;
   }
 }
- 
-
- /*# sourceMappingURL= style.css.map */
+/*# sourceMappingURL=style.css.map */
