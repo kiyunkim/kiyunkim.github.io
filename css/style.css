@@ -100,10 +100,12 @@ body {
 }
 
 .title {
+  margin: 0;
   width: 100%;
   color: #fff;
   font-size: 5em;
   line-height: 1;
+  font-weight: normal;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   position: relative;
   -webkit-animation: show 1.3s ease;
@@ -117,6 +119,7 @@ body {
   -moz-animation: show 1.8s ease;
   -o-animation: show 1.8s ease;
   animation: show 1.8s ease;
+  margin: 0;
   left: .1em;
   line-height: 1.8;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -179,7 +182,9 @@ body {
 
 @media screen and (max-width: 768px) {
   .contact a {
-    font-size: 1.5em;
+    font-size: 2.4em;
+    padding: .3em .4em;
+    margin-right: .4em;
   }
 }
 /*# sourceMappingURL=style.css.map */
