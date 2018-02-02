@@ -86,7 +86,6 @@ $linkpadding: 3px;
 
 body {
   font-family: $mainFont;
-  background: $mainColor2;
   font-size: $size;
   color: $mainColor1;
   @media screen and (max-width: 768px) {
@@ -105,9 +104,13 @@ body {
   -ms-flex-line-pack: center;
   align-content: center;
 }
+.header {
+  background: $mainColor2;
+}
 .container {
   max-width: 900px;
   margin: 0 auto;
+  @include box-sizing();
 }
 .main {
   padding: 0 3%;
@@ -200,4 +203,19 @@ body {
   left: 50%;
   margin-left: -30px;
   @include animation(scroll 1.5s infinite);
+}
+
+.projects {
+  color: $black;
+  padding: 3%;
+  .subtitle {
+    margin: .8em 0;
+    font-size: 2em;
+    text-align: center;
+  }
+  .text {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 1.3em 0;
+  }
 }

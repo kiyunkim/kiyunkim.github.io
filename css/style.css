@@ -94,7 +94,6 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: #a20000;
   font-size: 20px;
   color: #fff;
 }
@@ -118,9 +117,16 @@ body {
   align-content: center;
 }
 
+.header {
+  background: #a20000;
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .main {
@@ -248,5 +254,22 @@ body {
   -moz-animation: scroll 1.5s infinite;
   -o-animation: scroll 1.5s infinite;
   animation: scroll 1.5s infinite;
+}
+
+.projects {
+  color: #222;
+  padding: 3%;
+}
+
+.projects .subtitle {
+  margin: .8em 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.projects .text {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 1.3em 0;
 }
 /*# sourceMappingURL=style.css.map */
