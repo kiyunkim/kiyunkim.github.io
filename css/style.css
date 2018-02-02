@@ -1,34 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: #a20000;
-  font-size: 20px;
-  color: #fff;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-.flexbox {
-  display: -webkit-flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-content: center;
-  -ms-content-align: center;
-  align-content: center;
-}
-
 @-webkit-keyframes show {
   0% {
     opacity: 0;
@@ -73,6 +44,80 @@ body {
   }
 }
 
+@-webkit-keyframes scroll {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: calc(1% + 20px);
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+
+@-moz-keyframes scroll {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: calc(1% + 20px);
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+
+@-o-keyframes scroll {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: calc(1% + 20px);
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: calc(1% + 20px);
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: #a20000;
+  font-size: 20px;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -81,6 +126,7 @@ body {
 .main {
   padding: 0 3%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .avatar {
@@ -186,5 +232,21 @@ body {
     font-size: 2.4em;
     padding: .3em .4em;
   }
+}
+
+.scrolldwn {
+  font-size: 3em;
+  margin: 0 auto;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -30px;
+  -webkit-animation: scroll 1.5s infinite;
+  -moz-animation: scroll 1.5s infinite;
+  -o-animation: scroll 1.5s infinite;
+  animation: scroll 1.5s infinite;
 }
 /*# sourceMappingURL=style.css.map */
