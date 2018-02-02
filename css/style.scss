@@ -4,9 +4,9 @@
 $mainFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
-$size: 18px;
+$size: 20px;
 $black: #222;
-$red: #740000;
+$red: #a20000;
 $white: #fff;
 $grey: #ccc;
 $linkpadding: 3px;
@@ -65,7 +65,7 @@ body {
   font-size: $size;
   color: $white;
   @media screen and (max-width: 768px) {
-    font-size: $size - 5;
+    font-size: $size - 6;
   }
 }
 .flexbox {
@@ -116,7 +116,7 @@ body {
   color: $white;
   font-size: 5em;
   line-height: 1;
-  font-weight: normal;
+  font-weight: 500;
   font-family: $headFont;
   position: relative;
   @include animation(show 1.3s ease);
@@ -127,7 +127,7 @@ body {
   left: .1em;
   line-height: 1.8;
   font-family: $headFont;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   font-size: 2.3em;
   a {
@@ -165,13 +165,13 @@ body {
   position: relative;
   @include animation(show 1.8s ease);
   a {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    margin-right: .4em;
     color: $white;
-    padding: 5px;
+    padding: 7px;
     @media screen and (max-width: 768px) {
       font-size: 2.4em;
       padding: .3em .4em;
-      margin-right: .4em;
     }
   }
 }
