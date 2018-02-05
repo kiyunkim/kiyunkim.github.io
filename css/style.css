@@ -2,7 +2,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: #740000;
+  background: #a20000;
   font-size: 18px;
   color: #fff;
 }
@@ -141,7 +141,7 @@ body {
 }
 
 .summary a:hover, .summary a:focus {
-  color: #740000;
+  color: #a20000;
 }
 
 .summary a::after {
