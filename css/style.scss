@@ -4,11 +4,15 @@
 $mainFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $headFont: 'Montserrat', $mainFont;
 // Menlo, Monaco, 'Courier New', monospace;
-$size: 18px;
+$size: 20px;
+
 $black: #222;
 $red: #a20000;
 $white: #fff;
 $grey: #ccc;
+$mainColor1: $white;
+$mainColor2: $red;
+
 $linkpadding: 3px;
 
 @mixin border-radius($radius) {
@@ -58,31 +62,6 @@ $linkpadding: 3px;
     @content;
   }
 }
-
-body {
-  font-family: $mainFont;
-  background: $red;
-  font-size: $size;
-  color: $white;
-  @media screen and (max-width: 768px) {
-    font-size: $size - 5;
-  }
-}
-.flexbox {
-  display: -webkit-flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-content: center;
-  -ms-content-align: center;
-  align-content: center;
-}
 @include keyframes(show) {
   0% {
 		opacity: 0;
@@ -93,13 +72,50 @@ body {
     top: 0;
   }
 }
+@include keyframes(scroll) {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: calc(1% + 20px);
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+
+body {
+  font-family: $mainFont;
+  font-size: $size;
+  color: $mainColor1;
+  @media screen and (max-width: 768px) {
+    font-size: $size - 6;
+  }
+}
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+.header {
+  background: $mainColor2;
+}
 .container {
   max-width: 900px;
   margin: 0 auto;
+  @include box-sizing();
 }
 .main {
   padding: 0 3%;
   height: 100vh;
+  overflow: hidden; 
 }
 .avatar {
   max-width: 100px;
@@ -113,10 +129,10 @@ body {
 .title {
   margin: 0;
   width: 100%;
-  color: $white;
+  color: $mainColor1;
   font-size: 5em;
   line-height: 1;
-  font-weight: normal;
+  font-weight: 500;
   font-family: $headFont;
   position: relative;
   @include animation(show 1.3s ease);
@@ -127,18 +143,18 @@ body {
   left: .1em;
   line-height: 1.8;
   font-family: $headFont;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   font-size: 2.3em;
   a {
-    color: $white;
+    color: $mainColor1;
     padding: $linkpadding;
     position: relative; 
     text-decoration: none;
     @include transition(all .4s ease);
     &:hover,
     &:focus {
-      color: $red;
+      color: $mainColor2;
     }
     &::after {
       content: '';
@@ -148,7 +164,7 @@ body {
       position: absolute;
       bottom: 0;
       height: 2px;
-      background: $white;
+      background: $mainColor1;
       @include transition(all .3s ease);
     }
     &:hover::after,
@@ -165,13 +181,54 @@ body {
   position: relative;
   @include animation(show 1.8s ease);
   a {
-    font-size: 1.3em;
-    color: $white;
-    padding: 5px;
+    font-size: 1.5em;
+    margin-right: .4em;
+    color: $mainColor1;
+    padding: 7px;
     @media screen and (max-width: 768px) {
       font-size: 2.4em;
       padding: .3em .4em;
-      margin-right: .4em;
     }
+  }
+}
+
+.scrolldwn {
+  font-size: 3em;
+  margin: 0 auto;
+  display: inline-block;
+  color: $mainColor1;
+  text-decoration: none;
+  position: absolute; 
+  bottom: 30px;
+  left: 50%;
+  margin-left: -30px;
+  @include animation(scroll 1.5s infinite);
+}
+
+.projects {
+  color: $black;
+  text-align: center;
+  padding: 3%;
+  min-height: 100vh;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  img { width: 100%; }
+  .subtitle {
+    margin: .5em 0 .8em;
+    font-size: 2em;
+    width: 100%;
+  }
+  .project {
+    margin: 1.5%;
+    width: 30%;
+  }
+  .text {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 1.3em 0;
   }
 }
