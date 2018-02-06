@@ -175,22 +175,6 @@ body {
   }
 }
 
-.contact {
-  width: 100%;
-  margin: 2.5em 0 4em;
-  position: relative;
-  @include animation(show 1.8s ease);
-  a {
-    font-size: 1.5em;
-    margin-right: .4em;
-    color: $mainColor1;
-    padding: 7px;
-    @media screen and (max-width: 768px) {
-      font-size: 2.4em;
-      padding: .3em .4em;
-    }
-  }
-}
 
 .scrolldwn {
   font-size: 3em;
@@ -230,5 +214,26 @@ body {
     font-size: 1em;
     line-height: 1.5;
     margin: 1.3em 0;
+  }
+}
+
+.footer {
+  background: $red;
+}
+.contact {
+  width: 100%;
+  margin: 2.5em 0 4em;
+  position: relative;
+  @include animation(show 1.8s ease);
+  a {
+    font-size: 1.5em;
+    margin-right: .4em;
+    color: $mainColor1;
+    padding: 7px;
+    display: inline-block;
+    @media screen and (max-width: 768px) {
+      font-size: 2.4em;
+      padding: .3em .4em;
+    }
   }
 }
