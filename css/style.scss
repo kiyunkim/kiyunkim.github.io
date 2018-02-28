@@ -20,10 +20,10 @@ $linkpadding: 3px;
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
-@mixin box-sizing {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+@mixin box-sizing($var) {
+  -webkit-box-sizing: $var;
+  -moz-box-sizing: $var;
+  box-sizing: $var;
 }
 @mixin transition($var) {
   -webkit-transition: $var;
@@ -34,10 +34,8 @@ $linkpadding: 3px;
 }
 @mixin transform($var) {
   -webkit-transform: $var;
-  -moz-transform: $var;
   -ms-transform: $var;
-  -o-transform: $var;
-  transform: $var;
+  transition: $var;
 }
 
 // below from
@@ -110,7 +108,7 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  @include box-sizing();
+  @include box-sizing(border-box);
 }
 .main {
   padding: 0 3%;
@@ -208,14 +206,44 @@ body {
     font-size: 2em;
     width: 100%;
   }
-  .project {
-    margin: 1.5%;
-    width: 30%;
+}
+/* individual projects */
+.project {
+  margin: 1.5%;
+  width: 30%;
+  @include box-sizing(border-box);
+}
+.project-link {
+  color: $white;
+  position: relative;
+  display: block;
+  width: 100%;
+  @include box-sizing(border-box);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transition(all .5s ease);
   }
-  .text {
-    font-size: 1em;
-    line-height: 1.5;
-    margin: 1.3em 0;
+  &:hover::before {
+    background-color: rgba(0,0,0,0.4);
+  }
+  img {
+    display: block;
+  }
+}
+.project-desc {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 1.3em 0;
+}
+.tags {
+  background-color: $grey;
+  a {
+    display: inline-block;
   }
 }
 
