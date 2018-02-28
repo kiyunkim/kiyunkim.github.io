@@ -250,9 +250,10 @@ body {
 .footer {
   background: $red;
 }
-.contact {
+.contact,
+// below selector is for test.html only
+.contact-info {
   width: 100%;
-  // margin: 2.5em 0 4em;
   a {
     font-size: 1.5em;
     margin-right: .4em;
@@ -264,4 +265,9 @@ body {
       padding: .3em .4em;
     }
   }
+}
+.contact {
+  margin: 2.5em 0 4em;
+  position: relative;
+  @include animation(show 1.8s ease);
 }

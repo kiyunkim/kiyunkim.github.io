@@ -315,11 +315,13 @@ body {
   background: #a20000;
 }
 
-.contact {
+.contact,
+.contact-info {
   width: 100%;
 }
 
-.contact a {
+.contact a,
+.contact-info a {
   font-size: 1.5em;
   margin-right: .4em;
   color: #fff;
@@ -328,9 +330,19 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .contact a {
+  .contact a,
+  .contact-info a {
     font-size: 2.4em;
     padding: .3em .4em;
   }
+}
+
+.contact {
+  margin: 2.5em 0 4em;
+  position: relative;
+  -webkit-animation: show 1.8s ease;
+  -moz-animation: show 1.8s ease;
+  -o-animation: show 1.8s ease;
+  animation: show 1.8s ease;
 }
 /*# sourceMappingURL=style.css.map */
