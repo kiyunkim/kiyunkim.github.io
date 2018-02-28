@@ -145,7 +145,7 @@ body {
   font-family: $headFont;
   font-weight: 400;
   position: relative;
-  font-size: 2.3em;
+  font-size: 3.5vw; // 2.3em;
   a {
     color: $mainColor1;
     padding: $linkpadding;
@@ -175,22 +175,6 @@ body {
   }
 }
 
-.contact {
-  width: 100%;
-  margin: 2.5em 0 4em;
-  position: relative;
-  @include animation(show 1.8s ease);
-  a {
-    font-size: 1.5em;
-    margin-right: .4em;
-    color: $mainColor1;
-    padding: 7px;
-    @media screen and (max-width: 768px) {
-      font-size: 2.4em;
-      padding: .3em .4em;
-    }
-  }
-}
 
 .scrolldwn {
   font-size: 3em;
@@ -209,7 +193,9 @@ body {
   color: $black;
   text-align: center;
   padding: 3%;
+  max-width: 1200px;
   min-height: 100vh;
+  // there should be a better way to do the below ..
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
@@ -230,5 +216,24 @@ body {
     font-size: 1em;
     line-height: 1.5;
     margin: 1.3em 0;
+  }
+}
+
+.footer {
+  background: $red;
+}
+.contact {
+  width: 100%;
+  // margin: 2.5em 0 4em;
+  a {
+    font-size: 1.5em;
+    margin-right: .4em;
+    color: $mainColor1;
+    padding: 7px;
+    display: inline-block;
+    @media screen and (max-width: 768px) {
+      font-size: 2.4em;
+      padding: .3em .4em;
+    }
   }
 }
