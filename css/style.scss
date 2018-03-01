@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+/* ------------------------------------
+   Variables + Mixins
+------------------------------------ */
 $mainFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$headFont: 'Montserrat', $mainFont;
-// Menlo, Monaco, 'Courier New', monospace;
+$headFont: 'Montserrat', $mainFont; // Menlo, Monaco, 'Courier New', monospace;
 $size: 20px;
 
 $black: #222;
@@ -37,14 +39,11 @@ $linkpadding: 3px;
   -ms-transform: $var;
   transition: $var;
 }
-
-// below from
-// joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
-@mixin animation($animations) {
-  -webkit-animation: $animations;
-  -moz-animation:    $animations;
-  -o-animation:      $animations;
-  animation:         $animations;
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
 }
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
@@ -82,9 +81,11 @@ $linkpadding: 3px;
   }
 }
 
+/* ------------------------------------
+  Main Styles
+------------------------------------- */
 body {
-  font-family: $mainFont;
-  font-size: $size;
+  font: normal #{$size}/1.3 $mainFont;
   color: $mainColor1;
   @media screen and (max-width: 768px) {
     font-size: $size - 6;
@@ -102,6 +103,10 @@ body {
   -ms-flex-line-pack: center;
   align-content: center;
 }
+
+/* ------------------------------------
+  Header
+------------------------------------- */
 .header {
   background: $mainColor2;
 }
@@ -172,8 +177,6 @@ body {
     }
   }
 }
-
-
 .scrolldwn {
   font-size: 3em;
   margin: 0 auto;
@@ -187,6 +190,9 @@ body {
   @include animation(scroll 1.5s infinite);
 }
 
+/* ------------------------------------
+  Projects Section
+------------------------------------ */
 .projects {
   color: $black;
   text-align: center;
@@ -247,12 +253,16 @@ body {
   }
 }
 
+/* ------------------------------------
+  Footer
+------------------------------------ */
 .footer {
   background: $red;
 }
-.contact {
+.contact,
+// below selector is for test.html only
+.contact-info {
   width: 100%;
-  // margin: 2.5em 0 4em;
   a {
     font-size: 1.5em;
     margin-right: .4em;
@@ -264,4 +274,9 @@ body {
       padding: .3em .4em;
     }
   }
+}
+.contact {
+  margin: 2.5em 0 4em;
+  position: relative;
+  @include animation(show 1.8s ease);
 }
