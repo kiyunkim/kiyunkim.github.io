@@ -17,6 +17,11 @@ $mainColor2: $red;
 
 $linkpadding: 3px;
 
+@mixin tag($highlight-color, $text-color:$black) {
+  color: $text-color;
+  border-color: $highlight-color;
+  background: $highlight-color;
+}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -148,7 +153,7 @@ body {
   font-family: $headFont;
   font-weight: 400;
   position: relative;
-  font-size: 3.5vw; // 2.3em;
+  font-size: 2.3em;
   a {
     color: $mainColor1;
     padding: $linkpadding;
@@ -199,7 +204,6 @@ body {
   padding: 3%;
   max-width: 1200px;
   min-height: 100vh;
-  // there should be a better way to do the below ..
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
@@ -222,7 +226,7 @@ body {
 .project-link {
   color: $white;
   position: relative;
-  display: block;
+  display: table;
   width: 100%;
   @include box-sizing(border-box);
   &::before {
@@ -241,15 +245,41 @@ body {
     display: block;
   }
 }
+.project-title {
+}
 .project-desc {
   font-size: 1em;
   line-height: 1.5;
   margin: 1.3em 0;
 }
 .tags {
-  background-color: $grey;
+  font-size: .7em;
   a {
+    text-transform: uppercase; 
     display: inline-block;
+    padding: .4em;
+    line-height: 1;
+    margin: .3em;
+    cursor: pointer;
+    @include transition(all .1s ease);
+    background-color: lighten($grey, 15%);
+    border: 1px solid lighten($grey, 5%);
+    @include border-radius(5px);
+    &::before {
+      content: '#';
+    }
+    &[data-href='css']{
+      @include tag(#563d7c, $white);
+    }
+    &[data-href='js']{
+      @include tag(#f1e05a);
+    }
+    &[data-href='html']{
+      @include tag(#e34c26, $white);
+    }
+    &:hover {
+      @include tag(transparent);
+    }
   }
 }
 

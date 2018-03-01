@@ -185,7 +185,7 @@ body {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 400;
   position: relative;
-  font-size: 3.5vw;
+  font-size: 2.3em;
 }
 
 .summary a {
@@ -279,7 +279,7 @@ body {
 .project-link {
   color: #fff;
   position: relative;
-  display: block;
+  display: table;
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -315,11 +315,54 @@ body {
 }
 
 .tags {
-  background-color: #ccc;
+  font-size: .7em;
 }
 
 .tags a {
+  text-transform: uppercase;
   display: inline-block;
+  padding: .4em;
+  line-height: 1;
+  margin: .3em;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  background-color: #f2f2f2;
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.tags a::before {
+  content: '#';
+}
+
+.tags a[data-href='css'] {
+  color: #fff;
+  border-color: #563d7c;
+  background: #563d7c;
+}
+
+.tags a[data-href='js'] {
+  color: #222;
+  border-color: #f1e05a;
+  background: #f1e05a;
+}
+
+.tags a[data-href='html'] {
+  color: #fff;
+  border-color: #e34c26;
+  background: #e34c26;
+}
+
+.tags a:hover {
+  color: #222;
+  border-color: transparent;
+  background: transparent;
 }
 
 /* ------------------------------------
