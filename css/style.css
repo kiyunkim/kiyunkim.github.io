@@ -122,19 +122,19 @@ body {
   align-content: center;
 }
 
-/* ------------------------------------
-  Header
-------------------------------------- */
-.header {
-  background: #a20000;
-}
-
 .container {
   max-width: 900px;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* ------------------------------------
+  Header
+------------------------------------- */
+.header {
+  background: #a20000;
 }
 
 .main {
@@ -369,6 +369,8 @@ body {
   Footer
 ------------------------------------ */
 .footer {
+  padding: 1em;
+  text-align: center;
   background: #a20000;
 }
 

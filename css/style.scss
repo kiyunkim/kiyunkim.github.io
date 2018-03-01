@@ -108,17 +108,17 @@ body {
   -ms-flex-line-pack: center;
   align-content: center;
 }
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  @include box-sizing(border-box);
+}
 
 /* ------------------------------------
   Header
 ------------------------------------- */
 .header {
   background: $mainColor2;
-}
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  @include box-sizing(border-box);
 }
 .main {
   padding: 0 3%;
@@ -287,6 +287,8 @@ body {
   Footer
 ------------------------------------ */
 .footer {
+  padding: 1em;
+  text-align: center;
   background: $red;
 }
 .contact,
