@@ -204,24 +204,23 @@ body {
   padding: 3%;
   max-width: 1200px;
   min-height: 100vh;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  grid-template-areas: 
+    "subtitle subtitle subtitle"
+    "project project project";
   img { width: 100%; }
   .subtitle {
     margin: .5em 0 .8em;
     font-size: 2em;
     width: 100%;
+    grid-area: subtitle;
   }
 }
 /* individual projects */
 .project {
-  margin: 1.5%;
-  width: 30%;
-  @include box-sizing(border-box);
+  // ..
 }
 .project-link {
   color: $white;
@@ -254,6 +253,7 @@ body {
 }
 .tags {
   font-size: .7em;
+  margin: 1em 0;
   a {
     text-transform: uppercase; 
     display: inline-block;

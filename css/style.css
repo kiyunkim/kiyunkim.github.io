@@ -249,12 +249,10 @@ body {
   padding: 3%;
   max-width: 1200px;
   min-height: 100vh;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  grid-template-areas: "subtitle subtitle subtitle" "project project project";
 }
 
 .projects img {
@@ -265,17 +263,10 @@ body {
   margin: .5em 0 .8em;
   font-size: 2em;
   width: 100%;
+  grid-area: subtitle;
 }
 
 /* individual projects */
-.project {
-  margin: 1.5%;
-  width: 30%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .project-link {
   color: #fff;
   position: relative;
@@ -316,6 +307,7 @@ body {
 
 .tags {
   font-size: .7em;
+  margin: 1em 0;
 }
 
 .tags a {
