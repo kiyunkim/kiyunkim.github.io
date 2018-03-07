@@ -249,7 +249,9 @@ body {
   padding: 3%;
   max-width: 1200px;
   min-height: 100vh;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1em;
   grid-template-areas: "subtitle subtitle subtitle" "project project project";
