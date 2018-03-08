@@ -3,13 +3,10 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
-.subtitle {
-  -ms-flex-positive: 3;
-  flex-grow: 3;
-}
 .project {
-  width: 30%;
+  width: 32%;
 }

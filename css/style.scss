@@ -222,7 +222,6 @@ body {
 .subtitle {
   color: $black;
   text-align: center;
-  // margin: .5em 0 .8em;
   padding-top: 5%;
   margin-top: 0;
   font-size: 2em;
@@ -231,13 +230,14 @@ body {
 }
 /* individual projects */
 .project {
-  // ..
+  margin: 0 auto 1em;
 }
 .project-link {
   color: $white;
   position: relative;
   display: table;
   width: 100%;
+  background: $black;
   @include box-sizing(border-box);
   &::before {
     content: '';
@@ -249,13 +249,28 @@ body {
     @include transition(all .5s ease);
   }
   &:hover::before {
-    background-color: rgba(0,0,0,0.4);
+   // background-color: rgba(0,0,0,0.4);
+  }
+  .project-title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -1.3em;
+    font-size: 1.3em;
+    @include transition(all .8s ease);
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    opacity: 0;
+  }
+  &:hover .project-title {
+    opacity: 1;
   }
   img {
     display: block;
+    @include transition(all .8s ease);
   }
-}
-.project-title {
+  &:hover img {
+    opacity: .5;
+  }
 }
 .project-desc {
   font-size: 1em;
