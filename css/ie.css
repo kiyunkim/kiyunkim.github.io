@@ -10,3 +10,6 @@
   -ms-flex-positive: 3;
   flex-grow: 3;
 }
+.project {
+  width: 30%;
+}
