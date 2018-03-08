@@ -90,7 +90,9 @@ $linkpadding: 3px;
   Main Styles
 ------------------------------------- */
 body {
-  font: normal #{$size}/1.3 $mainFont;
+  font-size: $size;
+  line-height: 1.3;
+  font-family: $mainFont;
   color: $mainColor1;
   @media screen and (max-width: 768px) {
     font-size: $size - 6;
