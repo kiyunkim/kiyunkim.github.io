@@ -125,7 +125,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -137,6 +137,10 @@ body {
 ------------------------------------- */
 .header {
   background: #a20000;
+}
+
+.header .container {
+  max-width: 900px;
 }
 
 .main {
@@ -263,8 +267,11 @@ body {
   width: 100%;
 }
 
-.projects .subtitle {
-  margin: .5em 0 .8em;
+.subtitle {
+  color: #222;
+  text-align: center;
+  padding-top: 5%;
+  margin-top: 0;
   font-size: 2em;
   width: 100%;
   grid-area: subtitle;

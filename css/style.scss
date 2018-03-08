@@ -111,7 +111,7 @@ body {
   align-content: center;
 }
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   @include box-sizing(border-box);
 }
@@ -121,6 +121,9 @@ body {
 ------------------------------------- */
 .header {
   background: $mainColor2;
+  .container {
+    max-width: 900px;
+  }
 }
 .main {
   padding: 0 3%;
@@ -215,12 +218,16 @@ body {
     "subtitle subtitle subtitle"
     "project project project";
   img { width: 100%; }
-  .subtitle {
-    margin: .5em 0 .8em;
-    font-size: 2em;
-    width: 100%;
-    grid-area: subtitle;
-  }
+}
+.subtitle {
+  color: $black;
+  text-align: center;
+  // margin: .5em 0 .8em;
+  padding-top: 5%;
+  margin-top: 0;
+  font-size: 2em;
+  width: 100%;
+  grid-area: subtitle;
 }
 /* individual projects */
 .project {
