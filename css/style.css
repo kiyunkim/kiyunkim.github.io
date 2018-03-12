@@ -49,49 +49,49 @@
 
 @-webkit-keyframes scroll {
   0% {
-    bottom: 1%;
+    bottom: 3%;
   }
   50% {
-    bottom: calc(1% + 20px);
+    bottom: calc(3% + 20px);
   }
   100% {
-    bottom: 1%;
+    bottom: 3%;
   }
 }
 
 @-moz-keyframes scroll {
   0% {
-    bottom: 1%;
+    bottom: 3%;
   }
   50% {
-    bottom: calc(1% + 20px);
+    bottom: calc(3% + 20px);
   }
   100% {
-    bottom: 1%;
+    bottom: 3%;
   }
 }
 
 @-o-keyframes scroll {
   0% {
-    bottom: 1%;
+    bottom: 3%;
   }
   50% {
-    bottom: calc(1% + 20px);
+    bottom: calc(3% + 20px);
   }
   100% {
-    bottom: 1%;
+    bottom: 3%;
   }
 }
 
 @keyframes scroll {
   0% {
-    bottom: 1%;
+    bottom: 3%;
   }
   50% {
-    bottom: calc(1% + 20px);
+    bottom: calc(3% + 20px);
   }
   100% {
-    bottom: 1%;
+    bottom: 3%;
   }
 }
 
@@ -237,7 +237,6 @@ body {
   color: #fff;
   text-decoration: none;
   position: absolute;
-  bottom: 30px;
   left: 50%;
   margin-left: -30px;
   -webkit-animation: scroll 1.5s infinite;
@@ -336,7 +335,7 @@ body {
 }
 
 .project-link:hover img {
-  opacity: .5;
+  opacity: .3;
 }
 
 .project-desc {
