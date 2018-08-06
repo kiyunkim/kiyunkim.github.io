@@ -1,0 +1,130 @@
+@import url('../templates/css/reset.css');
+@import url('../templates/css/style.scss');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+$mainFont: 'Lato', arial, helvetica, sans-serif;
+$headFont: 'Montserrat', $mainFont;
+// Menlo, Monaco, 'Courier New', monospace;
+$size: 18px;
+$black: #222;
+$red: #be2b2b;
+$white: #fff;
+$grey: #ccc;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -ms-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
+@mixin flexbox($flex) {
+
+}
+
+body {
+  font-family: $mainFont;
+  background: $white;
+  line-height: 1.5;
+  font-size: $size;
+  color: $black;
+}
+a {
+  color: $black;
+  opacity: 0.5;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}
+.flexbox {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  background: $red;
+    .avatar {
+      max-width: 100px;
+      padding: 10px;
+    }
+    .title {
+      color: $white;
+      margin-left: 10px;
+      font-size: 2em;
+      font-family: $headFont;
+    }
+}
+
+.container {
+  max-width: 800px;
+  margin: 5% auto;
+  padding: 0 2%;
+  .intro {
+    margin: 5% 0;
+  }
+  .main {
+    margin: 10px 0;
+    width: 100%;
+    .col {
+      .col-title {
+        padding: .5em;
+        background: lighten($grey, 15%);
+        font-family: $headFont;
+      }
+      width: 49%;
+      // padding: 2%;
+      display: inline-block;
+      border: 1px solid $grey;
+      @include box-sizing();
+      li {
+        margin: .5em;
+      }
+    }
+  }
+}
+
+footer {
+  background: lighten($grey, 10%);
+  width: 100%;
+  .contact {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    -moz-box-pack: justify;
+    justify-content: center;
+    padding: 10px;
+    a {
+      border: none;
+      padding: 1%;
+      margin: 0 10px;
+    }
+    img {
+      display: block;
+      height: 30px;
+    }
+  }
+}

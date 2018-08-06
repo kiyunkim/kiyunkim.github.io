@@ -1,0 +1,114 @@
+@import url("../templates/css/reset.css");
+@import url("../templates/css/style.scss");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+body {
+  font-family: "Lato", arial, helvetica, sans-serif;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #222;
+}
+
+a {
+  color: #222;
+  opacity: 0.5;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+}
+
+a:hover, a:focus {
+  opacity: 1;
+}
+
+.flexbox {
+  max-width: 800px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  background: #be2b2b;
+}
+
+header .avatar {
+  max-width: 100px;
+  padding: 10px;
+}
+
+header .title {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 2em;
+  font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 5% auto;
+  padding: 0 2%;
+}
+
+.container .intro {
+  margin: 5% 0;
+}
+
+.container .main {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.container .main .col {
+  width: 49%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container .main .col .col-title {
+  padding: .5em;
+  background: #f2f2f2;
+  font-family: "Montserrat", "Lato", arial, helvetica, sans-serif;
+}
+
+.container .main .col li {
+  margin: .5em;
+}
+
+footer {
+  background: #e6e6e6;
+  width: 100%;
+}
+
+footer .contact {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: center;
+  -ms-flex-pack: justify;
+  -moz-box-pack: justify;
+  justify-content: center;
+  padding: 10px;
+}
+
+footer .contact a {
+  border: none;
+  padding: 1%;
+  margin: 0 10px;
+}
+
+footer .contact img {
+  display: block;
+  height: 30px;
+}
+ 
+
+ /*# sourceMappingURL= style.css.map */
