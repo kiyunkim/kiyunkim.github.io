@@ -1,0 +1,96 @@
+@import url('../templates/css/reset.css');
+@import url('../templates/css/style.scss');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+$mainFont: arial, helvetica, sans-serif;
+$headFont: Montserrat, $mainFont;
+// Menlo, Monaco, 'Courier New', monospace;
+$size: 12px;
+$color: #222;
+$color2: #C52F2F;
+$bodyBg: #fff;
+$containerBg: #fff;
+$grey: #ccc;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -ms-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
+body {
+  font-family: $mainFont;
+  background: $bodyBg;
+  line-height: 1.5;
+  font-size: $size;
+  color: $color;
+}
+a {
+  color: $color2;
+  &[target=_blank]::after {
+    display:inline-block;
+    content:"\f08e";
+    font-size: .8em;
+    text-decoration: none;
+    font-family: "FontAwesome";
+    margin-left: 4px;
+  }
+}
+.container {
+  max-width: 800px;
+  text-align: center;
+  margin: 2% auto;
+  .content {
+    background: $containerBg;
+    padding: 5%;
+    margin: 0 5%;
+    @media all and (max-width: 768px) {
+      margin: 2%;
+    }
+    .avatar {
+      max-width: 120px;
+      @include border-radius(20%);
+    }
+
+    .intro {
+      max-width: 400px;
+      margin: 0 auto 1em;
+      padding: 5px;
+      .title {
+        font-family: $headFont;
+        line-height: 1;
+        margin: .5em 0;
+        font-size: 2em;
+      }
+      .summary {
+        margin: .5em 0;
+      }
+    }
+
+    .col-2 {
+      display: inline-block;
+      @include border-radius(10px);
+      border: 1px solid $grey;
+      width: 40%;
+      padding: 2%;
+      margin: 0 1%;
+      h2 {
+        font-family: $headFont;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
