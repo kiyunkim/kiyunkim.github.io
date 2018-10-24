@@ -43,8 +43,6 @@ a[target=_blank]::after {
 
 .container .content .avatar {
   max-width: 120px;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
   border-radius: 20%;
 }
 
@@ -67,8 +65,6 @@ a[target=_blank]::after {
 
 .container .content .col-2 {
   display: inline-block;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
   width: 40%;
@@ -80,6 +76,4 @@ a[target=_blank]::after {
   font-family: Montserrat, arial, helvetica, sans-serif;
   font-size: 1.5em;
 }
- 
-
- /*# sourceMappingURL= style.css.map */
+/*# sourceMappingURL=style.css.map */

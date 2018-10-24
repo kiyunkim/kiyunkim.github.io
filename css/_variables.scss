@@ -12,7 +12,8 @@ $bp-large: '1024px';
 ------------------------------------ */
 $body-font: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 $head-font: 'Montserrat', $body-font; // Menlo, Monaco, 'Courier New', monospace;
-$font-size: 7vw !default;
+
+$font-size: 7vw !default; // make this responsive
 
 $black: #222;
 $red: #a20000;
