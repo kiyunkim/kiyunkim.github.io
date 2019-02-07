@@ -5,3 +5,4 @@ Public facing website to showcase code
 ## To do
 
 - [ ] Add libraries using npm instead of manually
+- [ ] Add portfolio paths?
