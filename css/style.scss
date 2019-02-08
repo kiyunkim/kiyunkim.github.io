@@ -10,18 +10,6 @@ body {
   font-family: $body-font;
   color: $font-color;
 }
-.flexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-}
 
 /* ------------------------------------
   Header
@@ -29,12 +17,7 @@ body {
 .header {
   background: $accent-color;
 }
-.main {
-  padding: 0 3%;
-  height: 100vh;
-  overflow: hidden;
-}
-.title {
+.header .title {
   margin: 0;
   width: 100%;
   position: relative;
@@ -79,8 +62,6 @@ body {
     display: inline-block;
   }
 }
-
-
 @media screen and (min-width: $bp-small) {
   body {
     font-size: $font-size - 2;
@@ -130,16 +111,13 @@ body {
   grid-area: subtitle;
 }
 /* individual projects */
-.project {
-  margin: 0 auto 1em;
-}
+
 .project-link {
   color: $white;
   position: relative;
   display: table;
   width: 100%;
   background: $black;
-  @include box-sizing(border-box);
   &::before {
     content: '';
     position: absolute;
@@ -152,19 +130,6 @@ body {
   &:hover::before {
    // background-color: rgba(0,0,0,0.4);
   }
-  .project-title {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    margin-top: -1.3em;
-    font-size: 1.3em;
-    @include transition(all .8s ease);
-    text-shadow: 0 0 10px rgba(0,0,0,0.6);
-    opacity: 0;
-  }
-  &:hover .project-title {
-    opacity: 1;
-  }
   img {
     display: block;
     @include transition(all .8s ease);
@@ -173,13 +138,14 @@ body {
     opacity: .3;
   }
 }
+
 .project-desc {
   font-size: 1em;
   line-height: 1.5;
   margin: 1.3em 0;
 }
 .tags {
-  font-size: .7em;
+  /* font-size: .7em;
   margin: 1em 0;
   a {
     text-transform: uppercase; 
@@ -191,7 +157,6 @@ body {
     @include transition(all .1s ease);
     background-color: lighten($grey, 15%);
     border: 1px solid lighten($grey, 5%);
-    @include border-radius(5px);
     &::before {
       content: '#';
     }
@@ -207,7 +172,7 @@ body {
     &:hover {
       @include tag(transparent);
     }
-  }
+  } */
 }
 
 /* ------------------------------------

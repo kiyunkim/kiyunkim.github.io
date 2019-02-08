@@ -2,17 +2,12 @@
 /* ------------------------------------
   Mixins
 ------------------------------------ */
-
 @mixin tag($highlight-color, $text-color:$black) {
   color: $text-color;
   border-color: $highlight-color;
   background: $highlight-color;
 }
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
+
 @mixin box-sizing($var) {
   -webkit-box-sizing: $var;
   -moz-box-sizing: $var;
