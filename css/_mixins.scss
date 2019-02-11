@@ -2,17 +2,6 @@
 /* ------------------------------------
   Mixins
 ------------------------------------ */
-@mixin tag($highlight-color, $text-color:$black) {
-  color: $text-color;
-  border-color: $highlight-color;
-  background: $highlight-color;
-}
-
-@mixin box-sizing($var) {
-  -webkit-box-sizing: $var;
-  -moz-box-sizing: $var;
-  box-sizing: $var;
-}
 @mixin transition($var) {
   -webkit-transition: $var;
   -moz-transition: $var;
@@ -23,7 +12,7 @@
 @mixin transform($var) {
   -webkit-transform: $var;
   -ms-transform: $var;
-  transition: $var;
+  transform: $var;
 }
 @mixin animation($animation) {
   -webkit-animation: $animation;
@@ -47,12 +36,12 @@
 }
 @include keyframes(show) {
   0% {
-		opacity: 0;
-    top: 50px;
+    opacity: 0;
+    @include transform(translateY(50px));
   }
   100% {
     opacity: 1;
-    top: 0;
+    @include transform(translateY(0));
   }
 }
 @include keyframes(scroll) {
