@@ -50,13 +50,16 @@ body {
 }
 .project-link {
   small::after {
-    content: '\2192';
+    content: '';
     display: inline-block;
-    @include transform(translateX(5px));
+    border-radius: 50%;
+    border: 1px solid transparent;
+    @include transform(translateX(5px) rotate(0));
     @include transition(all 500ms ease);
   }
   &:hover small::after {
-    @include transform(scale(1.2, 1) translateX(10px));
+    border: 1px solid;
+    @include transform(translateX(10px) rotate(315deg));
   }
 }
 
