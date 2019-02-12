@@ -61,19 +61,6 @@ body {
 }
 
 
-.contact {
-  width: 100%;
-  margin: 5vh 0;
-  position: relative;
-  font-size: 1.3em;
-  @include animation(show 1.8s ease);
-  a {
-    padding: 0 .1em;
-    margin-right: 8px;
-    color: $main-color;
-    display: inline-block;
-  }
-}
 @media screen and (min-width: $bp-small) {
   body {
     font-size: $font-size - 2;
@@ -92,50 +79,24 @@ body {
 
 
 /* ------------------------------------
-  Projects Section
+  Projects 
 ------------------------------------ */
 #projects {
   font-size: 1rem;
 }
-.projects {
-  color: $black;
-  text-align: center;
-  padding: 3%;
-  max-width: 1200px;
-  min-height: 100vh;
-}
-.subtitle {
-  color: $black;
-  text-align: center;
-  padding-top: 5%;
-  margin-top: 0;
-  font-size: 2em;
-  width: 100%;
-  grid-area: subtitle;
-}
-/* individual projects */
 
 /* ------------------------------------
   Footer
 ------------------------------------ */
 .footer {
-  padding: 1em;
-  text-align: center;
   background: $red;
 }
-.contact,
-// below selector is for test.html only
-.contact-info {
-  width: 100%;
-  a {
-    font-size: 1.5em;
-    margin-right: .4em;
-    color: $main-color;
-    padding: 7px;
-    display: inline-block;
-    @media screen and (max-width: 768px) {
-      font-size: 2.4em;
-      padding: .3em .4em;
-    }
+.footer a {
+  border-bottom: 6px solid transparent;
+  border-top: 6px solid transparent;
+  @include transition(all 200ms ease);
+  &:hover {
+    border-bottom: 6px solid $white;
+    @include transform(translateY(-5px));
   }
 }
