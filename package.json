@@ -1,0 +1,43 @@
+{
+  "name": "kiyunkim.github.io",
+  "version": "0.1.6",
+  "description": "Public facing website to showcase code",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.3.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/webpack-dev-server",
+    "start-dev": "NODE_ENV=dev webpack-dev-server --open",
+    "watch-dev": "NODE_ENV=dev nodemon -w webpack.config.js -x webpack-dev-server",
+    "build": "webpack",
+    "watch": "npm run build -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiyunkim/kiyunkim.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiyunkim/kiyunkim.github.io/issues"
+  },
+  "homepage": "https://github.com/kiyunkim/kiyunkim.github.io#readme"
+}
