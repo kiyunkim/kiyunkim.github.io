@@ -23,11 +23,10 @@
     "webpack-dev-server": "^3.2.1"
   },
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server",
-    "start-dev": "NODE_ENV=dev webpack-dev-server --open",
-    "watch-dev": "NODE_ENV=dev nodemon -w webpack.config.js -x webpack-dev-server",
-    "build": "webpack",
-    "watch": "npm run build -- --watch",
+    "start": "webpack-dev-server --open --env dev",
+    "watch": "nodemon -w webpack.config.js -x webpack-dev-server --env dev",
+    "w": "webpack-dev-server --watch",
+    "build": "webpack --env prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
