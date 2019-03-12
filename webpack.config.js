@@ -52,9 +52,6 @@ module.exports = function (env) {
         ENV: JSON.stringify(isDev ? 'dev' : 'prod')
       }),
       new CleanWebpackPlugin(),
-      new CopyWebpackPlugin([
-        {from: 'images', to: 'images'}
-      ]),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/index.html'),
         hash: true,
@@ -85,6 +82,31 @@ module.exports = function (env) {
           }
         }
       ] */
+      plugins: [
+        new CopyWebpackPlugin([
+          {from: 'images', to: 'images'}
+        ]),
+      ],
+      module: {
+        rules: [
+
+          {
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  outputPath: 'images',
+                  name: '[name].[hash].[ext]'
+                }
+              },
+              {
+                loader: 'image-webpack-loader',
+              }
+            ]
+          },
+        ]
+      }
     })
   }
 
@@ -113,6 +135,21 @@ module.exports = function (env) {
                 plugins: ['@babel/plugin-transform-runtime']
               }
             }
+          },
+          {
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  outputPath: 'images',
+                  name: '[name].[ext]'
+                }
+              },
+              {
+                loader: 'image-webpack-loader',
+              }
+            ]
           },
         ]
       },
