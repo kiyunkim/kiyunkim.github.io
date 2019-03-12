@@ -2,10 +2,8 @@
   "name": "kiyunkim.github.io",
   "version": "0.1.6",
   "description": "Public facing website to showcase code",
-  "main": "index.js",
-  "dependencies": {
-    "@babel/runtime": "^7.3.4"
-  },
+  "main": "app.js",
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-transform-runtime": "^7.3.4",
@@ -17,13 +15,14 @@
     "copy-webpack-plugin": "^5.0.1",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "popper.js": "^1.14.7",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",

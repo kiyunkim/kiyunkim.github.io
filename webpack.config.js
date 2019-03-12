@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // webpack only knows 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // to convert into css file
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = function (env) {
   // environment set in cli through npm scripts
@@ -51,18 +52,13 @@ module.exports = function (env) {
         ENV: JSON.stringify(isDev ? 'dev' : 'prod')
       }),
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        title: 'custom title',
-        text: 'some text',
-        template: path.join(__dirname, 'src/index.html'),
-        filename: path.join(__dirname, 'dist/index.html'),
-        inject: 'body', // this is the default, not needed
-        hash: true,
-        chunks: ['app'] // name of the bundle, determined by the key in line 6. add only this bundle
-      }),
       new CopyWebpackPlugin([
         {from: 'images', to: 'images'}
       ]),
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, 'src/index.html'),
+        hash: true,
+      }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css'
       })
@@ -95,13 +91,16 @@ module.exports = function (env) {
   if (isProd) {
     return merge(baseConfig, {
       mode: 'production',
+      output: {
+        publicPath: '/dist/'
+      },
       module: {
         rules: [
           {
             test: /\.js$/,
-            include: /src/, // or path.join(__dirname, 'src')
+            include: /src/,
             use: {
-              loader: 'babel-loader', // compile js only in prod
+              loader: 'babel-loader',
               options: {
                 presets: [
                   ['@babel/preset-env', {
@@ -119,7 +118,8 @@ module.exports = function (env) {
       },
       optimization: {
         minimizer: [
-          new OptimizeCSSAssetsPlugin({})
+          new OptimizeCSSAssetsPlugin(),
+          new UglifyJsPlugin()
         ]
       },
     })
