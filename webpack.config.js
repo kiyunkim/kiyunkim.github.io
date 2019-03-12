@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin'); // clean output
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // webpack only knows js, so add plugin to read html
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // to convert into css file
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = function (env) {
   // environment set in cli through npm scripts
@@ -30,14 +31,24 @@ module.exports = function (env) {
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: function() {
+                  return [
+                    require('autoprefixer')
+                  ]
+                }
+              }
+            },
             'sass-loader',
           ]
-        }
+        },
       ]
     },
     plugins: [
       new webpack.DefinePlugin({ // define constants in code
-        ENV: JSON.stringify(isDev ? 'development' : 'production')
+        ENV: JSON.stringify(isDev ? 'dev' : 'prod')
       }),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
@@ -49,6 +60,9 @@ module.exports = function (env) {
         hash: true,
         chunks: ['app'] // name of the bundle, determined by the key in line 6. add only this bundle
       }),
+      new CopyWebpackPlugin([
+        {from: 'images', to: 'images'}
+      ]),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css'
       })
@@ -63,10 +77,9 @@ module.exports = function (env) {
       devServer: {
         contentBase: path.join(__dirname, 'dist'),
         watchContentBase: true,
-        inline: true, // dont run my app inside the webpack iframe - this is the default
         stats: 'errors-only',
-        port: 8000, // number doesnt matter
-      },
+        port: 8000,
+      },/* 
       plugins: [
         { // see config
           apply(compiler) {
@@ -75,7 +88,7 @@ module.exports = function (env) {
             })
           }
         }
-      ]
+      ] */
     })
   }
 
