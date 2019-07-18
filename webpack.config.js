@@ -1,23 +1,21 @@
-const path = require('path'); // for different operating systems
+const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge'); // to merge baseConfig
-const CleanWebpackPlugin = require('clean-webpack-plugin'); // clean output
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // webpack only knows js, so add plugin to read html
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // to convert into css file
+const merge = require('webpack-merge');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = function (env) {
-  // environment set in cli through npm scripts
   const isDev = env.dev;
   const isProd = env.prod;
 
-  // config for all env:
   const baseConfig = {
-    context: path.resolve(__dirname, 'src'), // for './'
+    context: path.resolve(__dirname, 'src'),
     entry: {
-      app: './js/app.js', // key: file name ('app'), value: path to bundle
+      main: './js/main.js',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -45,6 +43,13 @@ module.exports = function (env) {
             'sass-loader',
           ]
         },
+        {
+          test: /\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader'
+          ]
+        }
       ]
     },
     plugins: [
@@ -72,16 +77,7 @@ module.exports = function (env) {
         watchContentBase: true,
         stats: 'errors-only',
         port: 8000,
-      },/* 
-      plugins: [
-        { // see config
-          apply(compiler) {
-            compiler.plugin("done", function() {
-              console.log(require('util').inspect(compiler.options))
-            })
-          }
-        }
-      ] */
+      },
       plugins: [
         new CopyWebpackPlugin([
           {from: 'images', to: 'images'}
@@ -89,7 +85,6 @@ module.exports = function (env) {
       ],
       module: {
         rules: [
-
           {
             test: /\.(jpe?g|png|gif|svg)$/i,
             use: [
@@ -114,7 +109,7 @@ module.exports = function (env) {
     return merge(baseConfig, {
       mode: 'production',
       output: {
-        publicPath: '/dist/'
+        path: path.resolve(__dirname, 'docs')
       },
       module: {
         rules: [
@@ -156,7 +151,13 @@ module.exports = function (env) {
       optimization: {
         minimizer: [
           new OptimizeCSSAssetsPlugin(),
-          new UglifyJsPlugin()
+          new UglifyJsPlugin(),
+          new CopyWebpackPlugin([
+            {
+              from: 'images/logo.png',
+              to: 'images/logo.png'
+            }
+          ]),
         ]
       },
     })
