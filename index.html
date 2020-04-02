@@ -30,6 +30,7 @@
 
 <body ontouchstart="">
   <header class="header">
+    <div id="url" style="display: none"></div>
     <div class="container">
       <div class="main flexbox">
         <h1 class="title">Kiyun Kim</h1>
@@ -43,4 +44,11 @@
   </header>
   
 </body>
+<script>
+
+var container = document.getElementById('url');
+var url = window.location.href;
+
+container.innerHTML = url;
+</script>
 </html>
